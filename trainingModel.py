@@ -88,7 +88,7 @@ class trainModel:
 
                 # splitting the data into training and test set for each cluster one by one
                 x_train, x_test, y_train, y_test = train_test_split(
-                    cluster_features, cluster_label, test_size=1 / 3, random_state=355
+                    cluster_features, cluster_label, test_size = 1 / 3, random_state=355
                 )
 
                 model_finder = tuner.Model_Finder(
@@ -102,7 +102,7 @@ class trainModel:
 
                 # saving the best model to the directory.
                 file_op = file_methods.File_Operation(self.file_object, self.log_writer)
-                save_model = file_op.save_model(best_model, best_model_name + str(i))
+                save_model = file_op.save_model(best_model, best_model_name + "_" + str(i))
 
             # logging the successful Training
             self.log_writer.log(self.file_object, "Successful End of Training")
