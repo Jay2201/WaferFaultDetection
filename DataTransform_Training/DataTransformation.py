@@ -1,6 +1,6 @@
 from datetime import datetime
 from os import listdir
-import pandas
+import pandas as pd
 from application_logging.logger import App_Logger
 
 
@@ -38,7 +38,7 @@ class dataTransform:
           try:
                onlyfiles = [f for f in listdir(self.goodDataPath)]
                for file in onlyfiles:
-                    csv = pandas.read_csv(self.goodDataPath+"/" + file)
+                    csv = pd.read_csv(self.goodDataPath + "/" + file)
                     csv.fillna('NULL',inplace=True)
                     # #csv.update("'"+ csv['Wafer'] +"'")
                     # csv.update(csv['Wafer'].astype(str))
