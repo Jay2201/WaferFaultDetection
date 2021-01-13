@@ -67,7 +67,7 @@ class dBOperation:
             conn = self.dataBaseConnection(DatabaseName)
             c = conn.cursor()
             c.execute(
-                "SELECT count(name)  FROM sqlite_master WHERE type = 'table'AND name = 'Good_Raw_Data'"
+                "SELECT count(name)  FROM sqlite_master WHERE type = 'table' AND name = 'Good_Raw_Data'"
             )
             if c.fetchone()[0] == 1:
                 conn.close()
